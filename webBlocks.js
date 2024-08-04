@@ -11,7 +11,7 @@ class WebBlocks {
             "blocks": [{
                 "opcode": "fetch",
                 "blockType": "reporter",
-                "text": "fetch data from url [url]",
+                "text": "fetch from url [url]",
                 "arguments": {
                     "url": {
                         "type": "string",
@@ -37,7 +37,7 @@ class WebBlocks {
             {
                 "opcode": "http",
                 "blockType": "reporter",
-                "text": "send an http request to [url] with a method of [method] and a body of [body]",
+                "text": "send [method] request to [url] with body [body]",
                 "arguments": {
                     "url": {
                         "type": "string",
@@ -56,7 +56,7 @@ class WebBlocks {
             {
                 "opcode": "makeJson",
                 "blockType": "reporter",
-                "text": "make json with key [key] and value [value]",
+                "text": "json with key [key] value [value]",
                 "arguments": {
                     "key": {
                         "type": "string",
@@ -71,7 +71,7 @@ class WebBlocks {
             {
                 "opcode": "joinJson",
                 "blockType": "reporter",
-                "text": "merge json [json1] and [json2]",
+                "text": "merge json [json1] [json2]",
                 "arguments": {
                     "json1": {
                         "type": "string",
