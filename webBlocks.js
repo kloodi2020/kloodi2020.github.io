@@ -109,11 +109,15 @@ class WebBlocks {
     }
 
     fetch({url}) {
+        var result = ""
+        
         try {
-            return fetch(url).then(response => response.text())
+            result = fetch(url).then(response => response.text())
         } catch (error) {
-            return ""
+            result = ""
         }
+
+        return result
     }
 
     extract({key, json}) {
