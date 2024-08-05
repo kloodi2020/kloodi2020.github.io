@@ -23,21 +23,6 @@ class WebBlocks {
                 }
             },
             {
-                "opcode": "extract",
-                "blockType": Scratch.BlockType.REPORTER,
-                "text": "extract [key] from [json]",
-                "arguments": {
-                    "key": {
-                        "type": Scratch.ArgumentType.STRING,
-                        "defaultValue": "example"
-                    },
-                    "json": {
-                        "type": Scratch.ArgumentType.STRING,
-                        "defaultValue": '{"example": 15}'
-                    }
-                }
-            },
-            {
                 "opcode": "http",
                 "blockType": Scratch.BlockType.REPORTER,
                 "text": "send [method] request to [url] with body [body]",
@@ -53,6 +38,28 @@ class WebBlocks {
                     "body": {
                         "type": Scratch.ArgumentType.STRING,
                         "defaultValue": ""
+                    }
+                }
+            },
+            {
+                "opcode": "httpCode",
+                "blockType": Scratch.BlockType.REPORTER,
+                "text": "last request http code",
+                "arguments": {}
+            },
+            "---",
+            {
+                "opcode": "extract",
+                "blockType": Scratch.BlockType.REPORTER,
+                "text": "extract [key] from [json]",
+                "arguments": {
+                    "key": {
+                        "type": Scratch.ArgumentType.STRING,
+                        "defaultValue": "example"
+                    },
+                    "json": {
+                        "type": Scratch.ArgumentType.STRING,
+                        "defaultValue": '{"example": 15}'
                     }
                 }
             },
@@ -85,12 +92,6 @@ class WebBlocks {
                         "defaultValue": '{"myKey": 5}'
                     }
                 }
-            },
-            {
-                "opcode": "httpCode",
-                "blockType": Scratch.BlockType.REPORTER,
-                "text": "last request http code",
-                "arguments": {}
             }
             ],
             "menus": {
