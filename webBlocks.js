@@ -171,12 +171,35 @@ class WebBlocks {
         return result
     }
 
-    makeJson({key, value}) {
-        try {
-            return '{"' + key + '": ' + value + "}"
-        } catch (error) {
-            return "{}"
+    convertBool(value) {
+        if (typeof(value) === "boolean") {
+            return value
         }
+        if (typeof(value) === "string" && (value.toLowerCase() === "true" || value.toLowerCase() === "false")) {
+            return value.toLowerCase() === "true" ? true : false
+        }
+        if (typeof(value) === "number") {
+            return value > 0
+        }
+        return "error"
+    }
+
+    makeJson({key, value}) {
+        var result = {}
+        result[key] = value
+
+        try {
+            result = JSON.stringify(result)
+            if (isNaN(value)) {
+                if (!(this.convertBool(value) === "error")) {
+                    result = "{" + key + ":" + this.convertBool(value) + "}"
+                }
+            }
+        } catch (error) {
+            result = "{}"
+        }
+
+        return result
     }
 
     joinJson({json1, json2}) {
