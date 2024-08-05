@@ -1,3 +1,5 @@
+var lastHTTPcode = ""
+
 class WebBlocks {
     constructor() {
     }
@@ -84,19 +86,10 @@ class WebBlocks {
                 }
             },
             {
-                "opcode": "",
+                "opcode": "httpCode",
                 "blockType": "reporter",
-                "text": "merge json [json1] and [json2]",
-                "arguments": {
-                    "json1": {
-                        "type": "string",
-                        "defaultValue": '{"yourKey": 5}'
-                    },
-                    "json2": {
-                        "type": "string",
-                        "defaultValue": '{"myKey": 5}'
-                    }
-                }
+                "text": "last request http code",
+                "arguments": {}
             }
             ],
             "menus": {
@@ -142,7 +135,12 @@ class WebBlocks {
 
             request.addEventListener("readystatechange", () => {
                 if (request.readyState === 4) {
-                    resolve(request.responseText)
+                    if (request.status === 200) {
+                        resolve(request.responseText)
+                    } else {
+                        resolve("")
+                    }
+                    lastHTTPcode = request.status
                 }
             })
 
@@ -219,6 +217,10 @@ class WebBlocks {
             
             return JSON.stringify(out)
         }
+    }
+
+    httpCode({}) {
+        return lastHTTPcode
     }
 }
 
