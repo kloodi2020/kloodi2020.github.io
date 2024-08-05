@@ -192,7 +192,7 @@ class WebBlocks {
             result = JSON.stringify(result)
             if (isNaN(value)) {
                 if (!(this.convertBool(value) === "error")) {
-                    result = "{" + key + ":" + this.convertBool(value) + "}"
+                    result = '{"' + key + '":' + this.convertBool(value) + "}"
                 }
             }
         } catch (error) {
