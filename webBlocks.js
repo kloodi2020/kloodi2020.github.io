@@ -107,7 +107,9 @@ class WebBlocks {
         var result = ""
         
         try {
-            result = fetch(url).then(response => response.text())
+            result = fetch(url).then(response => response.text()).catch(() => {
+                result = ""
+            })
         } catch (error) {
             result = ""
         }
