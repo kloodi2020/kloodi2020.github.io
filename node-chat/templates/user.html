@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>User - NodeChat</title>
+    <style type="text/css">
+      *{
+        text-decoration: none;
+      }
+      .navbar{
+        background: black;
+        font-family: arial;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      .navdiv{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo a{
+        font-size: 35px;
+        color: white;
+      }
+      li{
+        list-style: none;
+        display: inline-block;
+      }
+      li p,a{
+        color: white;
+        font-family: arial;
+        margin-right: 25px;
+      }
+      p{
+        color: white;
+        font-family: arial;
+      }
+      body{
+        background: #222222;
+      }
+      .danger{
+        color: red;
+        font-family: arial;
+      }
+      .buttonDanger{
+        color: white;
+        background: rgb(255, 0, 0);
+        font-family: arial;
+      }
+      .fakeFollow{
+        background: #333333;
+        color: #bbbbbb;
+      }
+      input{
+        background: #444444;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navdiv">
+        <div class="logo"><a href="/">NodeChat</a></div>
+        <ul>
+          {% if curUser == "" %}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign up</a></li>
+          {% else %}
+          <li><a href="/logout" class="danger">Logout</a></li>
+          <li><a>{{curUser}}</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <p>{{username}}</p>
+    {% if curUser == username %}
+    <button disabled="true" class="fakeFollow">Follow</button>
+    <p class="danger">You can't follow yourself!</p>
+
+    <h2><p>Account Settings</p></h2>
+
+    <a href="/deleteAcc" class="danger">Delete Account</a>
+    {% else %}
+    {% if following == "yes" %}
+    <form class="follow" action="#" method="post"><input type="submit" value="Unfollow"></input></form>
+    <p>You are following this user.</p>
+    {% else %}
+    <form class="follow" action="#" method="post"><input type="submit" value="Follow"></input></form>
+    {% endif %}
+    {% endif %}
+    <p class="danger">{{error}}</p>
+  </body>
+</html>

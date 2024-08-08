@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Delete Account - NodeChat</title>
+    <style type="text/css">
+      *{
+        text-decoration: none;
+      }
+      .navbar{
+        background: black;
+        font-family: arial;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      .navdiv{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo a{
+        font-size: 35px;
+        color: white;
+      }
+      li{
+        list-style: none;
+        display: inline-block;
+      }
+      li p,a{
+        color: white;
+        font-family: arial;
+        margin-right: 25px;
+      }
+      p,a{
+        color: white;
+        font-family: arial;
+        margin-right: 25px;
+      }
+      body{
+        background: #222222;
+      }
+      .danger{
+        color: red;
+        font-family: arial;
+      }
+      .buttonDanger{
+        color: white;
+        width: 128px;
+        background: rgb(255, 0, 0);
+        font-family: arial;
+      }
+      button{
+        text-align: start;
+        width: 128px;
+        background: #444444;
+        color: white;
+        font-family: arial;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navdiv">
+        <div class="logo"><a href="/">NodeChat</a></div>
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="danger">Are you sure you want to delete your account?</p>
+    <form class="deleteAcc" action="#" method="post"><input type="submit" value="Yes" class="buttonDanger"></input></form>
+    <a href="/me">No</a>
+  </body>
+</html>

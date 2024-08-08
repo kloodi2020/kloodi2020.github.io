@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>404 Not Found - NodeChat</title>
+    <style type="text/css">
+      *{
+        text-decoration: none;
+      }
+      .navbar{
+        background: black;
+        font-family: arial;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      .navdiv{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo a{
+        font-size: 35px;
+        color: white;
+      }
+      li{
+        list-style: none;
+        display: inline-block;
+      }
+      li p,a{
+        color: white;
+        font-family: arial;
+        margin-right: 25px;
+      }
+      body{
+        background: #222222;
+      }
+      .danger{
+        color: red;
+        font-family: arial;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navdiv">
+        <div class="logo"><a href="/">NodeChat</a></div>
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+    <h1><a class="danger">404 Not Found</a></h1>
+    <p><a>Sorry, But it seems like the page you are trying to go to
+    does not exist. If you think this is an error, Please try again
+    later.<br>You can click the logo on the top left to return to the home page.</a>
+    </p>
+    <p><a>{{url}}</a></p>
+  </body>
+</html>
