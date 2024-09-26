@@ -1,4 +1,4 @@
-var lastHTTPcode = ""
+var lastHTTPcode = 0
 
 class WebBlocks {
     constructor() {
