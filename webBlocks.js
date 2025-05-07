@@ -1,4 +1,4 @@
-var lastHTTPcode = 0
+var lastHTTPcode = ""
 
 class WebBlocks {
     constructor() {
@@ -97,7 +97,7 @@ class WebBlocks {
             "menus": {
                 "httpMethods": {
                     "acceptReporters": true,
-                    "items": ["GET", "POST", "PUT", "DELETE"]
+                    "items": ["GET", "HEAD", "POST", "PUT", "DELETE", "CONNECT", "OPTIONS", "TRACE", "PATCH"]
                 }
             }
         }
