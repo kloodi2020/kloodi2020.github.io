@@ -1,7 +1,7 @@
 const termsHigh = 10000000
 const termsLow = 1000000
 
-const epsilon = 0.0001
+const 𝜀 = 0.0001
 
 class BetterMath {
     constructor() {}
@@ -764,10 +764,10 @@ class BetterMath {
 		if (/[^x+-\/*0-9 ()]/g.test(𝑒𝑥𝑝𝑟)) { return NaN }
 		const f = new Function("x", `return ${𝑒𝑥𝑝𝑟}`)
 
-		let leftApproach = f(𝑥 - epsilon)
-		let rightApproach = f(𝑥 + epsilon)
+		let leftApproach = f(𝑥 - 𝜀)
+		let rightApproach = f(𝑥 + 𝜀)
 		
-		if (Math.abs(leftApproach - rightApproach) < epsilon) {
+		if (Math.abs(leftApproach - rightApproach) < 𝜀) {
 			return (leftApproach + rightApproach) / 2
 		} else {
 			return NaN
