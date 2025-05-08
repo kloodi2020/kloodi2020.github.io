@@ -628,6 +628,28 @@ class BetterMath {
 						"defaultValue": 5
 					}
 				}
+			},
+			{
+				"opcode": "deg",
+				"blockType": Scratch.BlockType.REPORTER,
+				"text": "[𝑥]𝑟𝑎𝑑 → °",
+				"arguments": {
+					"𝑥": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 3.14
+					}
+				}
+			},
+			{
+				"opcode": "𝑟𝑎𝑑",
+				"blockType": Scratch.BlockType.REPORTER,
+				"text": "[𝑥]° → 𝑟𝑎𝑑",
+				"arguments": {
+					"𝑥": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 180
+					}
+				}
 			}
 			],
             "menus": {
@@ -638,6 +660,14 @@ class BetterMath {
             }
         }
     }
+
+	𝑑𝑒𝑔({ 𝑥 }) {
+		return 𝑥 * (180 / Math.PI)
+	}
+
+	𝑟𝑎𝑑({ 𝑥 }) {
+		return 𝑥 * (Math.PI / 180)
+	}
 
     approxEqual({ 𝑥, 𝑦 }) {
 		return Math.round(𝑥) === Math.round(𝑦)
