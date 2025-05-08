@@ -11,7 +11,7 @@ class BetterMath {
             "id": "BetterMath",
             "name": "Better Math",
             "blocks": [{
-                "opcode": "approxEqual",
+                "opcode": "𝑎𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙",
                 "blockType": Scratch.BlockType.BOOLEAN,
                 "text": "[𝑥] ≈ [𝑦]",
                 "arguments": {
@@ -26,7 +26,23 @@ class BetterMath {
                 }
             },
 			{
-				"opcode": "notEqual",
+				"opcode": "𝑖𝑑𝑒𝑛𝑡𝑖𝑡𝑦𝐸𝑞𝑢𝑎𝑙",
+				"blockType": Scratch.BlockType.BOOLEAN,
+				"text": "[𝑥] ≡ [𝑦]",
+				"arguments": {
+                    "𝑥": {
+                        "type": Scratch.ArgumentType.NUMBER,
+                        "defaultValue": 5
+                    },
+                    "𝑦": {
+                        "type": Scratch.ArgumentType.NUMBER,
+                        "defaultValue": 5
+                    }
+                }
+			},
+			"---",
+			{
+				"opcode": "𝑛𝑜𝑡𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≶ [𝑦]",
 				"arguments": {
@@ -41,7 +57,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "equal",
+				"opcode": "𝑒𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≸ [𝑦]",
 				"arguments": {
@@ -56,13 +72,13 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "lessThanOrEqual",
+				"opcode": "𝑙𝑒𝑠𝑠𝑂𝑟𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≤ [𝑦]",
 				"arguments": {
 					"𝑥": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 5
+                        "defaultValue": 4
                     },
                     "𝑦": {
                         "type": Scratch.ArgumentType.NUMBER,
@@ -71,13 +87,13 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "moreThanOrEqual",
+				"opcode": "𝑚𝑜𝑟𝑒𝑂𝑟𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≥ [𝑦]",
 				"arguments": {
 					"𝑥": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 5
+                        "defaultValue": 6
                     },
                     "𝑦": {
                         "type": Scratch.ArgumentType.NUMBER,
@@ -86,67 +102,67 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "notLessThanOrEqual",
+				"opcode": "𝑛𝑜𝑡𝐿𝑒𝑠𝑠𝑂𝑟𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≰ [𝑦]",
 				"arguments": {
 					"𝑥": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 4
+                        "defaultValue": 5
                     },
                     "𝑦": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 5
+                        "defaultValue": 4
                     }
 				}
 			},
 			{
-				"opcode": "notMoreThanOrEqual",
+				"opcode": "𝑛𝑜𝑡𝑀𝑜𝑟𝑒𝑂𝑟𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≱ [𝑦]",
 				"arguments": {
 					"𝑥": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 6
+                        "defaultValue": 5
                     },
                     "𝑦": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 5
+                        "defaultValue": 6
                     }
 				}
 			},
 			{
-				"opcode": "notLessThan",
+				"opcode": "𝑛𝑜𝑡𝐿𝑒𝑠𝑠",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≮ [𝑦]",
 				"arguments": {
 					"𝑥": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 4
+                        "defaultValue": 5
                     },
                     "𝑦": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 5
+                        "defaultValue": 4
                     }
 				}
 			},
 			{
-				"opcode": "notMoreThan",
+				"opcode": "𝑛𝑜𝑡𝑀𝑜𝑟𝑒",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≯ [𝑦]",
 				"arguments": {
 					"𝑥": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 6
+                        "defaultValue": 5
                     },
                     "𝑦": {
                         "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 5
+                        "defaultValue": 6
                     }
 				}
 			},
 			{
-				"opcode": "lessOrApproxEqual",
+				"opcode": "𝑙𝑒𝑠𝑠𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≲ [𝑦]",
 				"arguments": {
@@ -161,7 +177,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "moreOrApproxEqual",
+				"opcode": "𝑚𝑜𝑟𝑒𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≳ [𝑦]",
 				"arguments": {
@@ -175,8 +191,9 @@ class BetterMath {
                     }
 				}
 			},
+			"---",
 			{
-				"opcode": "precedes",
+				"opcode": "𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≺ [𝑦]",
 				"arguments": {
@@ -191,7 +208,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "succeeds",
+				"opcode": "𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≻ [𝑦]",
 				"arguments": {
@@ -206,7 +223,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "doublePrecedes",
+				"opcode": "𝑑𝑜𝑢𝑏𝑙𝑒𝑃𝑟𝑒𝑐𝑒𝑑𝑒𝑠",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ⪻ [𝑦]",
 				"arguments": {
@@ -221,7 +238,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "doubleSucceeds",
+				"opcode": "𝑑𝑜𝑢𝑏𝑙𝑒𝑆𝑢𝑐𝑐𝑒𝑒𝑑𝑠",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ⪼ [𝑦]",
 				"arguments": {
@@ -236,24 +253,9 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "notPrecedes",
+				"opcode": "𝑛𝑜𝑡𝑃𝑟𝑒𝑐𝑒𝑑𝑒𝑠",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ⊀ [𝑦]",
-				"arguments": {
-					"𝑥": {
-                        "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 4
-                    },
-                    "𝑦": {
-                        "type": Scratch.ArgumentType.NUMBER,
-                        "defaultValue": 5
-                    }
-				}
-			},
-			{
-				"opcode": "notSucceeds",
-				"blockType": Scratch.BlockType.BOOLEAN,
-				"text": "[𝑥] ⊁ [𝑦]",
 				"arguments": {
 					"𝑥": {
                         "type": Scratch.ArgumentType.NUMBER,
@@ -266,7 +268,22 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "precedesOrEqual",
+				"opcode": "𝑛𝑜𝑡𝑆𝑢𝑐𝑐𝑒𝑒𝑑𝑠",
+				"blockType": Scratch.BlockType.BOOLEAN,
+				"text": "[𝑥] ⊁ [𝑦]",
+				"arguments": {
+					"𝑥": {
+                        "type": Scratch.ArgumentType.NUMBER,
+                        "defaultValue": 4
+                    },
+                    "𝑦": {
+                        "type": Scratch.ArgumentType.NUMBER,
+                        "defaultValue": 5
+                    }
+				}
+			},
+			{
+				"opcode": "𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠𝑂𝑟𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≼ [𝑦]",
 				"arguments": {
@@ -281,7 +298,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "succeedsOrEqual",
+				"opcode": "𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠𝑂𝑟𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≽ [𝑦]",
 				"arguments": {
@@ -296,7 +313,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "precedesOrApproxEqual",
+				"opcode": "𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≾ [𝑦]",
 				"arguments": {
@@ -311,7 +328,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "succeedsOrApproxEqual",
+				"opcode": "𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥] ≿ [𝑦]",
 				"arguments": {
@@ -326,6 +343,28 @@ class BetterMath {
 				}
 			},
 			"---",
+			{
+				"opcode": "𝑑𝑒𝑔",
+				"blockType": Scratch.BlockType.REPORTER,
+				"text": "[𝑥]𝑟𝑎𝑑 → °",
+				"arguments": {
+					"𝑥": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 3.14
+					}
+				}
+			},
+			{
+				"opcode": "𝑟𝑎𝑑",
+				"blockType": Scratch.BlockType.REPORTER,
+				"text": "[𝑥]° → 𝑟𝑎𝑑",
+				"arguments": {
+					"𝑥": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 180
+					}
+				}
+			},
 			{
 				"opcode": "Δ",
 				"blockType": Scratch.BlockType.REPORTER,
@@ -628,30 +667,7 @@ class BetterMath {
 						"defaultValue": 5
 					}
 				}
-			},
-			{
-				"opcode": "deg",
-				"blockType": Scratch.BlockType.REPORTER,
-				"text": "[𝑥]𝑟𝑎𝑑 → °",
-				"arguments": {
-					"𝑥": {
-						"type": Scratch.ArgumentType.NUMBER,
-						"defaultValue": 3.14
-					}
-				}
-			},
-			{
-				"opcode": "𝑟𝑎𝑑",
-				"blockType": Scratch.BlockType.REPORTER,
-				"text": "[𝑥]° → 𝑟𝑎𝑑",
-				"arguments": {
-					"𝑥": {
-						"type": Scratch.ArgumentType.NUMBER,
-						"defaultValue": 180
-					}
-				}
-			}
-			],
+			}],
             "menus": {
                 "roundingMethods": {
                     "acceptReporters": true,
@@ -661,87 +677,91 @@ class BetterMath {
         }
     }
 
+    𝑎𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return Math.round(𝑥) === Math.round(𝑦)
+	}
+
+	𝑖𝑑𝑒𝑛𝑡𝑖𝑡𝑦𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return 𝑥 === 𝑦
+	}
+
+	𝑛𝑜𝑡𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return 𝑥 !== 𝑦
+	}
+
+	𝑒𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return 𝑥 === 𝑦
+	}
+
+	𝑙𝑒𝑠𝑠𝑂𝑟𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return 𝑥 <= 𝑦
+	}
+	𝑚𝑜𝑟𝑒𝑂𝑟𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return 𝑥 >= 𝑦
+	}
+
+	𝑛𝑜𝑡𝐿𝑒𝑠𝑠𝑂𝑟𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return 𝑥 > 𝑦
+	}
+	𝑛𝑜𝑡𝑀𝑜𝑟𝑒𝑂𝑟𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return 𝑥 < 𝑦
+	}
+
+	𝑛𝑜𝑡𝐿𝑒𝑠𝑠({ 𝑥, 𝑦 }) {
+		return 𝑥 >= 𝑦
+	}
+	𝑛𝑜𝑡𝑀𝑜𝑟𝑒({ 𝑥, 𝑦 }) {
+		return 𝑥 <= 𝑦
+	}
+
+	𝑙𝑒𝑠𝑠𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return (𝑥 < 𝑦) || this.𝑎𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥: 𝑥, 𝑦: 𝑦 })
+	}
+	𝑚𝑜𝑟𝑒𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return (𝑥 > 𝑦) || this.𝑎𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥: 𝑥, 𝑦: 𝑦 })
+	}
+
+	𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠({ 𝑥, 𝑦 }) {
+		return 𝑥 + 1 === 𝑦
+	}
+	𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠({ 𝑥, 𝑦 }) {
+		return 𝑥 === 𝑦 + 1
+	}
+
+	𝑑𝑜𝑢𝑏𝑙𝑒𝑃𝑟𝑒𝑐𝑒𝑑𝑒𝑠({ 𝑥, 𝑦 }) {
+		return 𝑥 + 2 === 𝑦
+	}
+	𝑑𝑜𝑢𝑏𝑙𝑒𝑆𝑢𝑐𝑐𝑒𝑒𝑑𝑠({ 𝑥, 𝑦 }) {
+		return 𝑥 === 𝑦 + 2
+	}
+
+	𝑛𝑜𝑡𝑃𝑟𝑒𝑐𝑒𝑑𝑒𝑠({ 𝑥, 𝑦 }) {
+		return !this.𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠({ 𝑥: 𝑥, 𝑦: 𝑦 })
+	}
+	𝑛𝑜𝑡𝑆𝑢𝑐𝑐𝑒𝑒𝑑𝑠({ 𝑥, 𝑦 }) {
+		return !this.𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠({ 𝑥: 𝑥, 𝑦: 𝑦 })
+	}
+
+	𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠𝑂𝑟𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return this.𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠({ 𝑥: 𝑥, 𝑦: 𝑦 }) || 𝑥 === 𝑦
+	}
+	𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠𝑂𝑟𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return this.𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠({ 𝑥: 𝑥, 𝑦: 𝑦 }) || 𝑥 === 𝑦
+	}
+
+	𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return this.𝑝𝑟𝑒𝑐𝑒𝑑𝑒𝑠({ 𝑥: 𝑥, 𝑦: 𝑦 }) || this.𝑎𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥: 𝑥, 𝑦: 𝑦 })
+	}
+	𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
+		return this.𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠({ 𝑥: 𝑥, 𝑦: 𝑦 }) || this.𝑎𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥: 𝑥, 𝑦: 𝑦 })
+	}
+
 	𝑑𝑒𝑔({ 𝑥 }) {
 		return 𝑥 * (180 / Math.PI)
 	}
 
 	𝑟𝑎𝑑({ 𝑥 }) {
 		return 𝑥 * (Math.PI / 180)
-	}
-
-    approxEqual({ 𝑥, 𝑦 }) {
-		return Math.round(𝑥) === Math.round(𝑦)
-	}
-
-	notEqual({ 𝑥, 𝑦 }) {
-		return 𝑥 !== 𝑦
-	}
-
-	equal({ 𝑥, 𝑦 }) {
-		return 𝑥 === 𝑦
-	}
-
-	lessThanOrEqual({ 𝑥, 𝑦 }) {
-		return 𝑥 <= 𝑦
-	}
-	moreThanOrEqual({ 𝑥, 𝑦 }) {
-		return 𝑥 >= 𝑦
-	}
-
-	notLessThanOrEqual({ 𝑥, 𝑦 }) {
-		return 𝑥 > 𝑦
-	}
-	notMoreThanOrEqual({ 𝑥, 𝑦 }) {
-		return 𝑥 < 𝑦
-	}
-
-	notLessThan({ 𝑥, 𝑦 }) {
-		return 𝑥 >= 𝑦
-	}
-	notMoreThan({ 𝑥, 𝑦 }) {
-		return 𝑥 <= 𝑦
-	}
-
-	lessOrApproxEqual({ 𝑥, 𝑦 }) {
-		return (𝑥 < 𝑦) || this.approxEqual({ 𝑥: 𝑥, 𝑦: 𝑦 })
-	}
-	moreOrApproxEqual({ 𝑥, 𝑦 }) {
-		return (𝑥 > 𝑦) || this.approxEqual({ 𝑥: 𝑥, 𝑦: 𝑦 })
-	}
-
-	precedes({ 𝑥, 𝑦 }) {
-		return 𝑥 + 1 === 𝑦
-	}
-	succeeds({ 𝑥, 𝑦 }) {
-		return 𝑥 === 𝑦 + 1
-	}
-
-	doublePrecedes({ 𝑥, 𝑦 }) {
-		return 𝑥 + 2 === 𝑦
-	}
-	doubleSucceeds({ 𝑥, 𝑦 }) {
-		return 𝑥 === 𝑦 + 2
-	}
-
-	notPrecedes({ 𝑥, 𝑦 }) {
-		return !this.precedes({ 𝑥: 𝑥, 𝑦: 𝑦 })
-	}
-	notSucceeds({ 𝑥, 𝑦 }) {
-		return !this.succeeds({ 𝑥: 𝑥, 𝑦: 𝑦 })
-	}
-
-	precedesOrEqual({ 𝑥, 𝑦 }) {
-		return (𝑥 + 1 === 𝑦) || 𝑥 === 𝑦
-	}
-	succeedsOrEqual({ 𝑥, 𝑦 }) {
-		return (𝑥 === 𝑦 + 1) || 𝑥 === 𝑦
-	}
-
-	precedesOrApproxEqual({ 𝑥, 𝑦 }) {
-		return (𝑥 + 1 === 𝑦) || this.approxEqual({ 𝑥: 𝑥, 𝑦: 𝑦 })
-	}
-	succeedsOrApproxEqual({ 𝑥, 𝑦 }) {
-		return (𝑥 === 𝑦 + 1) || this.approxEqual({ 𝑥: 𝑥, 𝑦: 𝑦 })
 	}
 
 	Δ({ 𝑥 }) {
