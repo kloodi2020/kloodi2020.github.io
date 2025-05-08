@@ -423,6 +423,16 @@ class BetterMath {
 			},
 			"---",
 			{
+				"opcode": "𝑧𝑒𝑟𝑜",
+				"blockType": Scratch.BlockType.REPORTER,
+				"text": "0"
+			},
+			{
+				"opcode": "𝑜𝑛𝑒",
+				"blockType": Scratch.BlockType.REPORTER,
+				"text": "1"
+			},
+			{
 				"opcode": "π",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "π"
@@ -494,103 +504,103 @@ class BetterMath {
 			},
 			"---",
 			{
-				"opcode": "oneSeventh",
+				"opcode": "𝑜𝑛𝑒𝑆𝑒𝑣𝑒𝑛𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅐"
 			},
 			{
-				"opcode": "oneNinth",
+				"opcode": "𝑜𝑛𝑒𝑁𝑖𝑛𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅑"
 			},
 			{
-				"opcode": "oneTenth",
+				"opcode": "𝑜𝑛𝑒𝑇𝑒𝑛𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅒"
 			},
 			{
-				"opcode": "oneThird",
+				"opcode": "𝑜𝑛𝑒𝑇ℎ𝑖𝑟𝑑",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅓"
 			},
 			{
-				"opcode": "twoThird",
+				"opcode": "𝑡𝑤𝑜𝑇ℎ𝑖𝑟𝑑",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅔"
 			},
 			{
-				"opcode": "oneFifth",
+				"opcode": "𝑜𝑛𝑒𝐹𝑖𝑓𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅕"
 			},
 			{
-				"opcode": "twoFifth",
+				"opcode": "𝑡𝑤𝑜𝐹𝑖𝑓𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅖"
 			},
 			{
-				"opcode": "threeFifth",
+				"opcode": "𝑡ℎ𝑟𝑒𝑒𝐹𝑖𝑓𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅗"
 			},
 			{
-				"opcode": "fourFifth",
+				"opcode": "𝑓𝑜𝑢𝑟𝐹𝑖𝑓𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅘"
 			},
 			{
-				"opcode": "oneSixth",
+				"opcode": "𝑜𝑛𝑒𝑆𝑖𝑥𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅙"
 			},
 			{
-				"opcode": "fiveSixth",
+				"opcode": "𝑓𝑖𝑣𝑒𝑆𝑖𝑥𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅚"
 			},
 			{
-				"opcode": "oneEighth",
+				"opcode": "𝑜𝑛𝑒𝐸𝑖𝑔ℎ𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅛"
 			},
 			{
-				"opcode": "threeEighth",
+				"opcode": "𝑡ℎ𝑟𝑒𝑒𝐸𝑖𝑔ℎ𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅜"
 			},
 			{
-				"opcode": "fiveEighth",
+				"opcode": "𝑓𝑖𝑣𝑒𝐸𝑖𝑔ℎ𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅝"
 			},
 			{
-				"opcode": "sevenEighth",
+				"opcode": "𝑠𝑒𝑣𝑒𝑛𝐸𝑖𝑔ℎ𝑡ℎ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "⅞"
 			},
 			{
-				"opcode": "quarter",
+				"opcode": "𝑞𝑢𝑎𝑟𝑡𝑒𝑟",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "¼"
 			},
 			{
-				"opcode": "threeQuarter",
+				"opcode": "𝑡ℎ𝑟𝑒𝑒𝑄𝑢𝑎𝑟𝑡𝑒𝑟",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "¾"
 			},
 			{
-				"opcode": "half",
+				"opcode": "ℎ𝑎𝑙𝑓",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "½"
 			},
 			{
-				"opcode": "zero",
+				"opcode": "𝑧𝑒𝑟𝑜𝑇ℎ𝑖𝑟𝑑",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "↉"
 			},
 			"---",
 			{
-				"opcode": "sqrt",
+				"opcode": "𝑠𝑞𝑟𝑡",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "√[𝑥]",
 				"arguments": {
@@ -601,7 +611,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "cbrt",
+				"opcode": "𝑐𝑏𝑟𝑡",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "∛[𝑥]",
 				"arguments": {
@@ -612,7 +622,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "ftrt",
+				"opcode": "𝑡𝑠𝑟𝑡",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "∜[𝑥]",
 				"arguments": {
@@ -623,7 +633,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "root",
+				"opcode": "𝑟𝑜𝑜𝑡",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "[𝑥]√[𝑦]",
 				"arguments": {
@@ -639,7 +649,7 @@ class BetterMath {
 			},
 			"---",
 			{
-				"opcode": "power",
+				"opcode": "𝑝𝑜𝑤𝑒𝑟",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "[𝑥]^[𝑦]",
 				"arguments": {
@@ -654,7 +664,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "multiply",
+				"opcode": "𝑚𝑢𝑙𝑡𝑖𝑝𝑙𝑦",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "[𝑥]·[𝑦]",
 				"arguments": {
@@ -824,6 +834,14 @@ class BetterMath {
 		}
 	}
 
+	𝑧𝑒𝑟𝑜({}) {
+		return 0
+	}
+
+	𝑜𝑛𝑒({}) {
+		return 1
+	}
+
 	π({}) {
 		return Math.PI
 	}
@@ -905,86 +923,86 @@ class BetterMath {
 		return 2.502907875 // Again Again, I couldn't get an algorithm to work, I'm so sorry :(
 	}
 
-	oneSeventh({}) {
+	𝑜𝑛𝑒𝑆𝑒𝑣𝑒𝑛𝑡ℎ({}) {
 		return 1 / 7
 	}
 
-	oneNinth({}) {
+	𝑜𝑛𝑒𝑁𝑖𝑛𝑡ℎ({}) {
 		return 1 / 9
 	}
 
-	oneTenth({}) {
+	𝑜𝑛𝑒𝑇𝑒𝑛𝑡ℎ({}) {
 		return 0.1
 	}
 
-	oneThird({}) {
+	𝑜𝑛𝑒𝑇ℎ𝑖𝑟𝑑({}) {
 		return 1 / 3
 	}
-	twoThird({}) {
+	𝑡𝑤𝑜𝑇ℎ𝑖𝑟𝑑({}) {
 		return 2 / 3
 	}
 
-	oneFifth({}) {
+	𝑜𝑛𝑒𝐹𝑖𝑓𝑡ℎ({}) {
 		return 0.2
 	}
-	twoFifth({}) {
+	𝑡𝑤𝑜𝐹𝑖𝑓𝑡ℎ({}) {
 		return 0.4
 	}
-	threeFifth({}) {
+	𝑡ℎ𝑟𝑒𝑒𝐹𝑖𝑓𝑡ℎ({}) {
 		return 0.6
 	}
-	fourFifth({}) {
+	𝑓𝑜𝑢𝑟𝐹𝑖𝑓𝑡ℎ({}) {
 		return 0.8
 	}
 
-	oneSixth({}) {
+	𝑜𝑛𝑒𝑆𝑖𝑥𝑡ℎ({}) {
 		return 1 / 6
 	}
-	fiveSixth({}) {
+	𝑓𝑖𝑣𝑒𝑆𝑖𝑥𝑡ℎ({}) {
 		return 5 / 6
 	}
 
-	oneEighth({}) {
+	𝑜𝑛𝑒𝐸𝑖𝑔ℎ𝑡ℎ({}) {
 		return 0.125
 	}
-	threeEighth({}) {
+	𝑡ℎ𝑟𝑒𝑒𝐸𝑖𝑔ℎ𝑡ℎ({}) {
 		return 0.375
 	}
-	fiveEighth({}) {
+	𝑓𝑖𝑣𝑒𝐸𝑖𝑔ℎ𝑡ℎ({}) {
 		return 0.625
 	}
-	sevenEighth({}) {
+	𝑠𝑒𝑣𝑒𝑛𝐸𝑖𝑔ℎ𝑡ℎ({}) {
 		return 0.875
 	}
 
-	quarter({}) {
+	𝑞𝑢𝑎𝑟𝑡𝑒𝑟({}) {
 		return 0.25
 	}
-	threeQuarter({}) {
+	𝑡ℎ𝑟𝑒𝑒𝑄𝑢𝑎𝑟𝑡𝑒𝑟({}) {
 		return 0.75
 	}
 
-	half({}) {
+	ℎ𝑎𝑙𝑓({}) {
 		return 0.5
 	}
 
-	zero({}) {
+	𝑧𝑒𝑟𝑜𝑇ℎ𝑖𝑟𝑑({}) {
 		return 0
 	}
 
-	sqrt({ 𝑥 }) {
+	𝑠𝑞𝑟𝑡({ 𝑥 }) {
 		return Math.sqrt(𝑥)
 	}
 
-	cbrt({ 𝑥 }) {
+	𝑐𝑏𝑟𝑡({ 𝑥 }) {
 		return Math.cbrt(𝑥)
 	}
 
-	ftrt({ 𝑥 }) {
+	𝑡𝑠𝑟𝑡({ 𝑥 }) {
 		return 𝑥 ** 0.25
 	}
 
-	root({ 𝑥, 𝑦 }) {
+	𝑟𝑜𝑜𝑡({ 𝑥, 𝑦 }) {
 		if (𝑦 === 1) { return 𝑥 }
 		return 𝑥 ** (1 / 𝑦)
 	}
@@ -993,7 +1011,7 @@ class BetterMath {
 		return 𝑥 ** 𝑦
 	}
 
-	multiply({ 𝑥, 𝑦 }) {
+	𝑚𝑢𝑙𝑡𝑖𝑝𝑙𝑦({ 𝑥, 𝑦 }) {
 		return 𝑥 * 𝑦
 	}
 }
