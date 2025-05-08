@@ -1,5 +1,5 @@
-const termsHigh = 10000000
-const termsLow = 1000000
+const 𝑡𝑒𝑟𝑚𝑠𝐻𝑖 = 10000000
+const 𝑡𝑒𝑟𝑚𝑠𝐿𝑜 = 1000000
 
 const 𝜀 = 0.0001
 
@@ -722,16 +722,16 @@ class BetterMath {
 		let result = 0
 
 		if (/[^x+-\/*0-9 ()]/g.test(𝑒𝑥𝑝𝑟)) { return NaN }
-		const f = new Function("x", `return ${𝑒𝑥𝑝𝑟}`)
+		const 𝑓 = new Function("x", `return ${𝑒𝑥𝑝𝑟}`)
 
 		if (𝑑𝑜𝑤𝑛 < 𝑢𝑝) {
-			for (let i = 𝑑𝑜𝑤𝑛; i <= 𝑢𝑝; i ++) {
-				result += f(i)
+			for (let 𝑖 = 𝑑𝑜𝑤𝑛; 𝑖 <= 𝑢𝑝; 𝑖 ++) {
+				result += 𝑓(𝑖)
 			}
 		}
 		else {
-			for (let i = 𝑢𝑝; i <= 𝑑𝑜𝑤𝑛; i ++) {
-				result += f(i)
+			for (let 𝑖 = 𝑢𝑝; 𝑖 <= 𝑑𝑜𝑤𝑛; 𝑖 ++) {
+				result += 𝑓(𝑖)
 			}
 		}
 
@@ -752,8 +752,8 @@ class BetterMath {
 	  
 		𝑥 --
 		let 𝑦 = 𝑝[0]
-		for (let i = 1; i < 𝑔 + 2; i ++) {
-			𝑦 += 𝑝[i] / (𝑥 + i)
+		for (let 𝑖 = 1; 𝑖 < 𝑔 + 2; 𝑖 ++) {
+			𝑦 += 𝑝[𝑖] / (𝑥 + 𝑖)
 		}
 	  
 		let 𝑡 = 𝑥 + 𝑔 + 0.5;
@@ -762,13 +762,13 @@ class BetterMath {
 
 	𝑙𝑖𝑚({ 𝑥, 𝑒𝑥𝑝𝑟 }) {
 		if (/[^x+-\/*0-9 ()]/g.test(𝑒𝑥𝑝𝑟)) { return NaN }
-		const f = new Function("x", `return ${𝑒𝑥𝑝𝑟}`)
+		const 𝑓 = new Function("x", `return ${𝑒𝑥𝑝𝑟}`)
 
-		let leftApproach = f(𝑥 - 𝜀)
-		let rightApproach = f(𝑥 + 𝜀)
+		let 𝑙𝑒𝑓𝑡 = 𝑓(𝑥 - 𝜀)
+		let 𝑟𝑖𝑔𝐻𝑡 = 𝑓(𝑥 + 𝜀)
 		
-		if (Math.abs(leftApproach - rightApproach) < 𝜀) {
-			return (leftApproach + rightApproach) / 2
+		if (Math.abs(𝑙𝑒𝑓𝑡 - 𝑟𝑖𝑔𝐻𝑡) < 𝜀) {
+			return (𝑙𝑒𝑓𝑡 + 𝑟𝑖𝑔𝐻𝑡) / 2
 		} else {
 			return NaN
 		}
@@ -803,36 +803,36 @@ class BetterMath {
 	}
 
 	γ({}) {
-		let sum = 0
-		for (let i = 1; i <= termsHigh; i ++) {
-			sum += 1 / i
+		let 𝑠𝑢𝑚 = 0
+		for (let 𝑖 = 1; 𝑖 <= 𝑡𝑒𝑟𝑚𝑠𝐻𝑖; 𝑖 ++) {
+			𝑠𝑢𝑚 += 1 / 𝑖
 		}
-		return sum - Math.log(termsHigh)
+		return 𝑠𝑢𝑚 - Math.log(𝑡𝑒𝑟𝑚𝑠𝐻𝑖)
 	}
 
 	ζ3({}) {
-		let sum = 0
-		for (let i = 1; i <= termsHigh; i ++) {
-			sum += 1 / (i ** 3)
+		let 𝑠𝑢𝑚 = 0
+		for (let 𝑖 = 1; 𝑖 <= 𝑡𝑒𝑟𝑚𝑠𝐻𝑖; 𝑖 ++) {
+			𝑠𝑢𝑚 += 1 / (𝑖 ** 3)
 		}
-		return sum
+		return 𝑠𝑢𝑚
 	}
 
 	𝐺({}) {
-		let sum = 0
-		for (let i = 0; i < termsLow; i ++) {
-			sum += (-1) ** i / ((2 * i + 1) ** 2)
+		let 𝑠𝑢𝑚 = 0
+		for (let 𝑖 = 0; 𝑖 < 𝑡𝑒𝑟𝑚𝑠𝐿𝑜; 𝑖 ++) {
+			𝑠𝑢𝑚 += (-1) ** 𝑖 / ((2 * 𝑖 + 1) ** 2)
 		}
-		return sum
+		return 𝑠𝑢𝑚
 	}
 
 	ϖ({}) {
-		let sum = 0
-		for (let i = 0; i < termsHigh; i ++) {
-			let x = (i + 0.5) / termsHigh
-			sum += 1 / Math.sqrt(1 - x ** 4)
+		let 𝑠𝑢𝑚 = 0
+		for (let 𝑖 = 0; 𝑖 < 𝑡𝑒𝑟𝑚𝑠𝐻𝑖; 𝑖 ++) {
+			let 𝑥 = (𝑖 + 0.5) / 𝑡𝑒𝑟𝑚𝑠𝐻𝑖
+			𝑠𝑢𝑚 += 1 / Math.sqrt(1 - 𝑥 ** 4)
 		}
-		return (sum / termsHigh) * 1
+		return (𝑠𝑢𝑚 / 𝑡𝑒𝑟𝑚𝑠𝐻𝑖) * 1
 	}
 
 	𝐴({}) {
@@ -840,11 +840,11 @@ class BetterMath {
 	}
 
 	𝐾0({}) {
-		let product = 1
-		for (let i = 1; i <= termsLow; i ++) {
-			product *= Math.pow(i, 1 / i ** 2)
+		let 𝑝𝑟𝑜𝑑𝑢𝑐𝑡 = 1
+		for (let 𝑖 = 1; 𝑖 <= 𝑡𝑒𝑟𝑚𝑠𝐿𝑜; 𝑖 ++) {
+			𝑝𝑟𝑜𝑑𝑢𝑐𝑡 *= Math.pow(𝑖, 1 / 𝑖 ** 2)
 		}
-		return product
+		return 𝑝𝑟𝑜𝑑𝑢𝑐𝑡
 	}
 
 	δ({}) {
