@@ -1417,15 +1417,15 @@ class BetterMath {
 	}
 
 	𝑎𝑛𝑑({ 𝑥, 𝑦 }) {
-		𝑥 = 𝑥 === undefined ? false : 𝑥
-		𝑦 = 𝑦 === undefined ? false : 𝑦
+		𝑥 = (𝑥 === undefined || 𝑥 === null) ? false : 𝑥
+		𝑦 = (𝑦 === undefined || 𝑦 === null) ? false : 𝑦
 		
 		return 𝑥 && 𝑦
 	}
 
 	𝑜𝑟({ 𝑥, 𝑦 }) {
-		𝑥 = 𝑥 === undefined ? false : 𝑥
-		𝑦 = 𝑦 === undefined ? false : 𝑦
+		𝑥 = (𝑥 === undefined || 𝑥 === null) ? false : 𝑥
+		𝑦 = (𝑦 === undefined || 𝑦 === null) ? false : 𝑦
 		
 		return 𝑥 || 𝑦
 	}
