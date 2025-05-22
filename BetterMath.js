@@ -519,6 +519,25 @@ class BetterMath {
 				}
 			},
 			{
+				"opcode": "Π",
+				"blockType": Scratch.BlockType.REPORTER,
+				"text": "Π([𝑢𝑝],𝑥=[𝑑𝑜𝑤𝑛],[𝑒𝑥𝑝𝑟])",
+				"arguments": {
+                    "𝑢𝑝": {
+                        "type": Scratch.ArgumentType.NUMBER,
+                        "defaultValue": 1
+                    },
+					"𝑒𝑥𝑝𝑟": {
+                        "type": Scratch.ArgumentType.STRING,
+                        "defaultValue": "𝑥 * 2"
+                    },
+					"𝑑𝑜𝑤𝑛": {
+                        "type": Scratch.ArgumentType.NUMBER,
+                        "defaultValue": 3
+                    }
+				}
+			},
+			{
 				"opcode": "Γ",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "Γ[𝑥]",
@@ -1471,6 +1490,26 @@ class BetterMath {
 		else {
 			for (let 𝑖 = 𝑢𝑝; 𝑖 <= 𝑑𝑜𝑤𝑛; 𝑖 ++) {
 				𝑟𝑒𝑠𝑢𝑙𝑡 += 𝑓(𝑖)
+			}
+		}
+
+		return 𝑟𝑒𝑠𝑢𝑙𝑡
+	}
+
+	Π({ 𝑢𝑝, 𝑒𝑥𝑝𝑟, 𝑑𝑜𝑤𝑛 }) {
+		let 𝑟𝑒𝑠𝑢𝑙𝑡 = 0
+
+		if (/[^𝑥+-\/*0-9 ()]/g.test(𝑒𝑥𝑝𝑟)) { return NaN }
+		const 𝑓 = new Function("𝑥", `return ${𝑒𝑥𝑝𝑟}`)
+
+		if (𝑑𝑜𝑤𝑛 < 𝑢𝑝) {
+			for (let 𝑖 = 𝑑𝑜𝑤𝑛; 𝑖 <= 𝑢𝑝; 𝑖 ++) {
+				𝑟𝑒𝑠𝑢𝑙𝑡 *= 𝑓(𝑖)
+			}
+		}
+		else {
+			for (let 𝑖 = 𝑢𝑝; 𝑖 <= 𝑑𝑜𝑤𝑛; 𝑖 ++) {
+				𝑟𝑒𝑠𝑢𝑙𝑡 *= 𝑓(𝑖)
 			}
 		}
 
