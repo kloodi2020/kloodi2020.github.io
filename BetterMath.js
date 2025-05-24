@@ -1184,7 +1184,7 @@ class BetterMath {
 				}
 			},
 			{
-				"opcode": "ℎ𝑦𝑝𝑒𝑟𝑜𝑝𝑒𝑟𝑎𝑡𝑖𝑜𝑛",
+				"opcode": "ℎ𝑦𝑝𝑒𝑟𝑜𝑝𝑒𝑟𝑎𝑡𝑒",
 				"blockType": Scratch.BlockType.REPORTER,
 				"text": "[𝑥]→[𝑦]→[𝑧]",
 				"arguments": {
