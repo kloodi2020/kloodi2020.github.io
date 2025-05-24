@@ -1183,6 +1183,25 @@ class BetterMath {
 					}
 				}
 			},
+			{
+				"opcode": "ℎ𝑦𝑝𝑒𝑟𝑜𝑝𝑒𝑟𝑎𝑡𝑖𝑜𝑛",
+				"blockType": Scratch.BlockType.REPORTER,
+				"text": "[𝑥]→[𝑦]→[𝑧]",
+				"arguments": {
+					"𝑥": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 2
+					},
+					"𝑦": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 2
+					},
+					"𝑧": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 4
+					}
+				}
+			},
 			"---",
 			{
 				"opcode": "𝑓𝑎𝑐𝑡𝑜𝑟𝑖𝑎𝑙",
@@ -1916,6 +1935,16 @@ class BetterMath {
 
 	𝑚𝑢𝑙𝑡𝑖𝑝𝑙𝑦({ 𝑥, 𝑦 }) {
 		return 𝑥 * 𝑦
+	}
+
+	ℎ𝑦𝑝𝑒𝑟𝑜𝑝𝑒𝑟𝑎𝑡𝑒({ 𝑥, 𝑦, 𝑧 }) {
+		if (𝑧 === 0) { return 0 }
+		if (𝑧 === 1) { return 𝑥 * 𝑦 }
+		if (𝑧 === 2) { return 𝑥 ** 𝑦 }
+		if (𝑧 === 3) { return this.𝑡𝑒𝑡𝑟𝑎𝑡𝑒({ 𝑥: 𝑥, 𝑦: 𝑦 }) }
+		if (𝑧 === 4) { return this.𝑝𝑒𝑛𝑡𝑎𝑡𝑒({ 𝑥: 𝑥, 𝑦: 𝑦 }) }
+		if (𝑧 === 5) { return this.ℎ𝑒𝑥𝑎𝑡𝑒({ 𝑥: 𝑥, 𝑦: 𝑦 }) }
+		return this.ℎ𝑒𝑝𝑡𝑎𝑡𝑒({ 𝑥: 𝑥, 𝑦: 𝑦 })
 	}
 
 	𝑓𝑎𝑐𝑡𝑜𝑟𝑖𝑎𝑙({ 𝑥 }) {
