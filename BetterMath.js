@@ -400,6 +400,26 @@ class BetterMath {
 			},
 			"---",
 			{
+				"opcode": "𝑖𝑠𝐼𝑛",
+				"blockType": Scratch.BlockType.BOOLEAN,
+				"text": "[𝑥]∈([𝑦],[𝑧])",
+				"arguments": {
+					"𝑥": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 5
+					},
+					"𝑦": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 2.5
+					},
+					"𝑧": {
+						"type": Scratch.ArgumentType.NUMBER,
+						"defaultValue": 7.5
+					}
+				}
+			},
+			"---",
+			{
 				"opcode": "𝑎𝑛𝑑",
 				"blockType": Scratch.BlockType.BOOLEAN,
 				"text": "[𝑥]•[𝑦]",
@@ -1452,6 +1472,16 @@ class BetterMath {
 	}
 	𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠𝑂𝑟𝐴𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥, 𝑦 }) {
 		return this.𝑠𝑢𝑐𝑐𝑒𝑒𝑑𝑠({ 𝑥: 𝑥, 𝑦: 𝑦 }) || this.𝑎𝑝𝑝𝑟𝑜𝑥𝐸𝑞𝑢𝑎𝑙({ 𝑥: 𝑥, 𝑦: 𝑦 })
+	}
+
+	𝑖𝑠𝐼𝑛({ 𝑥, 𝑦, 𝑧 }) {
+		if (𝑦 > 𝑧) {
+			let 𝑡𝑒𝑚𝑝 = 𝑧
+			𝑧 = 𝑦
+			𝑦 = 𝑡𝑒𝑚𝑝
+		}
+
+		return 𝑥 >= 𝑦 && 𝑥 <= 𝑧
 	}
 
 	𝑎𝑛𝑑({ 𝑥, 𝑦 }) {
