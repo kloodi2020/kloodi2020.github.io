@@ -584,7 +584,7 @@ window.onload = () => {
                 initGame(30, 16, 99)
                 break
             case "huge":
-                initGame(64, 64, 128)
+                initGame(30, 24, 667)
                 break
         }
     })
