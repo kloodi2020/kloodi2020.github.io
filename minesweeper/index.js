@@ -352,7 +352,9 @@ class Game {
         x = Math.floor(x / 16)
         y = Math.floor(y / 16)
 
-        this.holdingIdx = this.coordsToIdx(x, y)
+        if (!this.outOfBounds(x, y)) {
+            this.holdingIdx = this.coordsToIdx(x, y)
+        }
 
         if (this.hasControl()) {
             this.curSmiley = 48
@@ -620,7 +622,7 @@ window.onload = () => {
                 initGame(30, 16, 99)
                 break
             case "huge":
-                initGame(64, 64, 128)
+                initGame(30, 24, 667)
                 break
         }
     })
