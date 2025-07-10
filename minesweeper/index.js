@@ -328,13 +328,6 @@ class Game {
                 }
             }
         }
-
-        if (this.lose) {
-            this.curSmiley = 96
-        }
-        if (this.win) {
-            this.curSmiley = 72
-        }
     }
 
     onMouseMove(x, y) {
@@ -372,7 +365,9 @@ class Game {
 
         this.holdingIdx = this.coordsToIdx(x, y)
 
-        this.curSmiley = 48
+        if (this.hasControl()) {
+            this.curSmiley = 48
+        }
     }
 
     onUnClick(x, y) {
