@@ -330,21 +330,6 @@ class Game {
         }
     }
 
-    onMouseMove(x, y) {
-        x = Math.floor(x / 3)
-        y = Math.floor(y / 3)
-
-        x -= 14
-        y -= 55
-
-        x = Math.floor(x / 16)
-        y = Math.floor(y / 16)
-
-        if (this.holdingIdx > -1) {
-            this.holdingIdx = this.coordsToIdx(x, y)
-        }
-    }
-
     onClick(x, y) {
         x = Math.floor(x / 3)
         y = Math.floor(y / 3)
@@ -383,7 +368,15 @@ class Game {
         }
 
         if (this.curSmiley === 24) {
-            this.curSmiley = 0
+            if (this.lose) {
+                this.curSmiley = 96
+            }
+            else if (this.win) {
+                this.curSmiley = 72
+            }
+            else {
+                this.curSmiley = 0
+            }
         }
         if (this.curSmiley === 48) {
             this.curSmiley = 0
@@ -431,6 +424,38 @@ class Game {
         this.flagTile(Math.floor(x / 16), Math.floor(y / 16))
     }
 
+    onMouseMove(x, y) {
+        x = Math.floor(x / 3)
+        y = Math.floor(y / 3)
+
+        const cnvWidth = this.canvas.width / 3
+        const smileyX = Math.ceil((cnvWidth - 24) / 2)
+
+        if (!(x >= smileyX && y >= 16 && x < smileyX + 24 && y < 40)) {
+            if (this.curSmiley === 24) {
+                if (this.lose) {
+                    this.curSmiley = 96
+                }
+                else if (this.win) {
+                    this.curSmiley = 72
+                }
+                else {
+                    this.curSmiley = 0
+                }
+            }
+        }
+
+        x -= 14
+        y -= 55
+
+        x = Math.floor(x / 16)
+        y = Math.floor(y / 16)
+
+        if (!this.outOfBounds(x, y) && this.holdingIdx > -1) {
+            this.holdingIdx = this.coordsToIdx(x, y)
+        }
+    }
+
     drawRect(x, y, w, h, color) {
         this.ctx.fillStyle = color
         this.ctx.fillRect(x, y, w, h)
@@ -460,7 +485,14 @@ class Game {
 
         this.drawDynamicGrid(9, 52, 6 + this.width * 16, 6 + this.height * 16)
 
-        this.drawText(Math.max(-99, Math.min(this.mines - this.flags, 999)).toString().padStart(3, "0"), 17, 16)
+        const displayNum = Math.max(-99, Math.min(this.mines - this.flags, 999))
+
+        if (displayNum < 0) {
+            this.drawText("-" + (-displayNum).toString().padStart(2, "0"), 17, 16)
+        }
+        else {
+            this.drawText(displayNum.toString().padStart(3, "0"), 17, 16)
+        }
         this.drawText(Math.min(Math.floor(this.time), 999).toString().padStart(3, "0"), cnvWidth - 57, 16)
 
         this.ctx.drawImage(smiley, this.curSmiley, 0, 24, 24, Math.ceil((cnvWidth - 24) / 2), 16, 24, 24)
@@ -584,7 +616,7 @@ window.onload = () => {
                 initGame(30, 16, 99)
                 break
             case "huge":
-                initGame(30, 24, 667)
+                initGame(64, 64, 128)
                 break
         }
     })
@@ -608,7 +640,7 @@ window.onload = () => {
         requestAnimationFrame(gameLoop)
     }
 
-    canvas.addEventListener("mousedown", (event) => {
+    document.addEventListener("mousedown", (event) => {
         if (event.shiftKey) { return }
 
         if (event.button === 0) {
@@ -621,7 +653,7 @@ window.onload = () => {
             game.onRightClick(event.x - canvas.getBoundingClientRect().left, event.y - canvas.getBoundingClientRect().top)
         }
     })
-    canvas.addEventListener("mouseup", (event) => {
+    document.addEventListener("mouseup", (event) => {
         if (event.shiftKey) { return }
 
         if (event.button === 0) {
@@ -631,10 +663,10 @@ window.onload = () => {
             game.onUnMiddleClick(event.x - canvas.getBoundingClientRect().left, event.y - canvas.getBoundingClientRect().top)
         }
     })
-    canvas.addEventListener("mousemove", (event) => {
+    document.addEventListener("mousemove", (event) => {
         game.onMouseMove(event.x - canvas.getBoundingClientRect().left, event.y - canvas.getBoundingClientRect().top)
     })
-    canvas.addEventListener("contextmenu", (event) => {
+    document.addEventListener("contextmenu", (event) => {
         if (event.shiftKey) { return }
 
         event.preventDefault()
