@@ -328,6 +328,10 @@ class Game {
                 }
             }
         }
+
+        if (!this.hasControl()) {
+            this.holdingIdx = -1
+        }
     }
 
     onClick(x, y) {
