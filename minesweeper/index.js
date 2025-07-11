@@ -346,6 +346,10 @@ class Game {
             return
         }
 
+        if (x >= 0 && y >= 0 && x < cnvWidth && y < this.canvas.height / 3 && this.hasControl()) {
+            this.curSmiley = 48
+        }
+
         x -= 14
         y -= 55
 
@@ -354,10 +358,6 @@ class Game {
 
         if (!this.outOfBounds(x, y)) {
             this.holdingIdx = this.coordsToIdx(x, y)
-        }
-
-        if (this.hasControl()) {
-            this.curSmiley = 48
         }
     }
 
@@ -412,7 +412,12 @@ class Game {
     }
 
     onMiddleClick(x, y) {
-        this.curSmiley = 48
+        x = Math.floor(x / 3)
+        y = Math.floor(y / 3)
+        
+        if (x >= 0 && y >= 0 && x < this.canvas.width / 3 && y < this.canvas.height / 3 && this.hasControl()) {
+            this.curSmiley = 48
+        }
     }
 
     onUnMiddleClick(x, y) {
@@ -672,7 +677,7 @@ window.onload = () => {
     document.addEventListener("mousemove", (event) => {
         game.onMouseMove(event.x - canvas.getBoundingClientRect().left, event.y - canvas.getBoundingClientRect().top)
     })
-    document.addEventListener("contextmenu", (event) => {
+    canvas.addEventListener("contextmenu", (event) => {
         if (event.shiftKey) { return }
 
         event.preventDefault()
