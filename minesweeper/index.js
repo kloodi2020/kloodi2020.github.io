@@ -49,6 +49,9 @@ class Game {
         this.ctx.webkitImageSmoothingEnabled = false
         this.ctx.imageSmoothingEnabled = false
 
+        this.mouseHeld = false
+        this.middleHeld = false
+
         this.reset()
 
         const cnvWidth = this.canvas.width / 3
@@ -130,6 +133,7 @@ class Game {
 
     reset() {
         this.time = 0
+        this.timeStart = false
 
         this.flags = 0
 
@@ -263,6 +267,7 @@ class Game {
             }
         }
         this.firstClick = false
+        this.timeStart = true
 
         let idx = this.coordsToIdx(x, y)
 
@@ -317,7 +322,7 @@ class Game {
     }
 
     update(dt) {
-        if (!this.firstClick && this.hasControl()) {
+        if (this.timeStart && this.hasControl()) {
             this.time += dt
             if (Math.floor(this.time) !== Math.floor(this.prevTime)) {
                 this.prevTime = this.time
@@ -335,6 +340,8 @@ class Game {
     }
 
     onClick(x, y) {
+        this.mouseHeld = true
+
         x = Math.floor(x / 3)
         y = Math.floor(y / 3)
 
@@ -362,13 +369,15 @@ class Game {
     }
 
     onUnClick(x, y) {
+        this.mouseHeld = false
+
         x = Math.floor(x / 3)
         y = Math.floor(y / 3)
 
         const cnvWidth = this.canvas.width / 3
         const smileyX = Math.ceil((cnvWidth - 24) / 2)
 
-        if (x >= smileyX && y >= 16 && x < smileyX + 24 && y < 40) {
+        if (this.curSmiley === 24 && x >= smileyX && y >= 16 && x < smileyX + 24 && y < 40) {
             this.reset()
             return
         }
@@ -416,11 +425,35 @@ class Game {
         y = Math.floor(y / 3)
         
         if (x >= 0 && y >= 0 && x < this.canvas.width / 3 && y < this.canvas.height / 3 && this.hasControl()) {
+            this.middleHeld = true
             this.curSmiley = 48
+        }
+
+        x -= 14
+        y -= 55
+
+        x = Math.floor(x / 16)
+        y = Math.floor(y / 16)
+        
+        if (!this.outOfBounds(x, y)) {
+            this.holdingIdx = this.coordsToIdx(x, y)
         }
     }
 
     onUnMiddleClick(x, y) {
+        x -= 14
+        y -= 55
+
+        x = Math.floor(x / 16)
+        y = Math.floor(y / 16)
+
+        if (!this.outOfBounds(x, y)) {
+            this.timeStart = true
+        }
+
+        this.middleHeld = false
+        this.holdingIdx = -1
+
         if (this.curSmiley === 48) {
             this.curSmiley = 0
         }
@@ -455,12 +488,26 @@ class Game {
                 }
             }
         }
+        else if (this.mouseHeld) {
+            if (this.curSmiley !== 48) {
+                this.curSmiley = 24
+            }
+        }
 
         x -= 14
         y -= 55
 
         x = Math.floor(x / 16)
         y = Math.floor(y / 16)
+
+        if (this.outOfBounds(x, y)) {
+            this.holdingIdx = -1
+        }
+        else {
+            if (this.middleHeld || this.mouseHeld) {
+                this.holdingIdx = this.coordsToIdx(x, y)
+            }
+        }
 
         if (!this.outOfBounds(x, y) && this.holdingIdx > -1) {
             this.holdingIdx = this.coordsToIdx(x, y)
@@ -470,6 +517,24 @@ class Game {
     drawRect(x, y, w, h, color) {
         this.ctx.fillStyle = color
         this.ctx.fillRect(x, y, w, h)
+    }
+
+    isHeld(x, y) {
+        if (this.middleHeld) {
+            if (this.holdingIdx === this.coordsToIdx(x, y)) { return true }
+
+            let held = false
+            neighbors.forEach((neighbor) => {
+                const neighborX = x + neighbor[0]
+                const neighborY = y + neighbor[1]
+                
+                if (!this.outOfBounds(neighborX, neighborY) && this.holdingIdx === this.coordsToIdx(neighborX, neighborY)) {
+                    held = true
+                }
+            })
+            return held
+        }
+        return this.holdingIdx === this.coordsToIdx(x, y)
     }
 
     draw() {
@@ -526,12 +591,12 @@ class Game {
                         }
                         else if (this.tileFlagged[idx] === FLAG_MARK) {
                             srcX = 48
-                            if (this.holdingIdx === idx) {
+                            if (this.isHeld(x, y)) {
                                 srcX = 64
                             }
                         }
                         else {
-                            if (this.holdingIdx === idx) {
+                            if (this.isHeld(x, y)) {
                                 srcX = 16
                             }
                         }
@@ -571,12 +636,12 @@ class Game {
                             }
                             else if (this.tileFlagged[idx] === FLAG_MARK) {
                                 srcX = 48
-                                if (this.holdingIdx === idx) {
+                                if (this.isHeld(x, y)) {
                                     srcX = 64
                                 }
                             }
                             else {
-                                if (this.holdingIdx === idx) {
+                                if (this.isHeld(x, y)) {
                                     srcX = 16
                                 }
                             }
