@@ -255,7 +255,7 @@ class Game {
                     let mineY = random(0, this.height - 1)
                     
                     let idx = this.coordsToIdx(mineX, mineY)
-                    if (this.tileStates[idx] !== TILE_MINE && mineX !== x && mineY !== y) {
+                    if (this.tileStates[idx] !== TILE_MINE && (mineX !== x || mineY !== y)) {
                         this.tileStates[idx] = TILE_MINE
                         break
                     }
