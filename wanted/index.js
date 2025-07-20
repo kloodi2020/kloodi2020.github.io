@@ -1,14 +1,14 @@
 const bg = new Image()
-bg.src = "bg.png"
+bg.src = "images/bg.png"
 
 const headsBig = new Image()
-headsBig.src = "headsBig.png"
+headsBig.src = "images/headsBig.png"
 
 const headsSmall = new Image()
-headsSmall.src = "headsSmall.png"
+headsSmall.src = "images/headsSmall.png"
 
 const hud = new Image()
-hud.src = "hud.png"
+hud.src = "images/hud.png"
 
 const fontLetters = "0123456789"
 
@@ -16,6 +16,13 @@ const CHAR_LUIGI = 0
 const CHAR_MARIO = 1
 const CHAR_YOSHI = 2
 const CHAR_WARIO = 3
+
+const CHAR_NAMES = [
+    "luigi",
+    "mario",
+    "yoshi",
+    "wario"
+]
 
 class Head {
     constructor(game, x, y, char) {
@@ -160,6 +167,18 @@ class Game {
         this.winTimer = 3
     }
 
+    getWinSound(char) {
+        let folder = "winStar0"
+        if (this.level >= 10) {
+            folder = "winStar2"
+        }
+        else if (this.level >= 5) {
+            folder = "winStar1"
+        }
+
+        return new Audio(`sounds/${folder}/${CHAR_NAMES[char]}Win.wav`)
+    }
+
     generateHeads() {
         let headPos = []
         if (this.level > 35) {
@@ -287,6 +306,9 @@ class Game {
             if (this.time <= 0) {
                 this.time = 0
                 this.loseTimer = 3
+
+                const audio = new Audio(`sounds/${CHAR_NAMES[this.wantedChar]}Lose.wav`)
+                audio.play()
             }
 
             this.levelTimer += deltaTime
@@ -341,6 +363,9 @@ class Game {
             if (x > head.x && x < head.x + 32 && y > head.y && y < head.y + 32) {
                 if (head.char == this.wantedChar) {
                     this.timerIncrease += 5
+
+                    const audio = this.getWinSound(head.char)
+                    audio.play()
 
                     this.win()
                 }
