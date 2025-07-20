@@ -33,13 +33,39 @@ class Head {
         this.char = char
     }
 
+    setX(x) {
+        let newX = x
+
+        if (newX < -32) {
+            newX += 288
+        }
+        if (newX > 256) {
+            newX -= 288
+        }
+
+        this.x = newX
+    }
+
+    setY(y) {
+        let newY = y
+
+        if (newY > 192) {
+            newY -= 224
+        }
+        if (newY < -32) {
+            newY += 224
+        }
+
+        this.y = newY
+    }
+
     update(deltaTime) {
         if (this.game.level > 35) {
-            const radius = Math.sin(this.game.levelTimer * 50) * 128
+            const radius = Math.sin(this.game.levelTimer * 2) * 128
             const timer = Math.sin(this.game.levelTimer) * 3
 
-            this.x = 112 + Math.sin(this.spawnX + timer * radius / 128) * radius
-            this.y = this.spawnY + Math.cos(this.spawnX + timer * timer * radius / 128) * radius
+            this.setX(112 + Math.sin(this.spawnX + timer * radius / 128) * radius)
+            this.setY(this.spawnY + Math.cos(this.spawnX + timer * timer * radius / 128) * radius)
         }
         else if (this.game.level > 30) {
             this.dx = Math.max(Math.abs(this.y - 80), 48) * 10
@@ -63,17 +89,17 @@ class Head {
             }
         }
         else if (this.game.level > 20) {
-            this.x = this.spawnX + Math.sin(this.game.levelTimer * 5) * (64 + Math.sin(this.game.levelTimer + this.spawnX) * 30)
-            this.y = this.spawnY + Math.cos(this.game.levelTimer * 5) * (64 + Math.sin(this.game.levelTimer + this.spawnY) * 30)
+            this.setX(this.spawnX + Math.sin(this.game.levelTimer * 5) * (64 + Math.sin(this.game.levelTimer + this.spawnX) * 30))
+            this.setY(this.spawnY + Math.cos(this.game.levelTimer * 5) * (64 + Math.sin(this.game.levelTimer + this.spawnY) * 30))
         }
         else if (this.game.level > 15) {
-            this.y = this.spawnY + Math.sin(this.x / 16) * (48 - Math.abs(this.spawnY - 96))
+            this.setY(this.spawnY + Math.sin(this.x / 16) * (48 - Math.abs(this.spawnY - 96)))
             
             this.dx = 120 + (this.game.level - 15) * 32
             this.dx = Math.floor(this.spawnX / 32) % 2 == 0 ? this.dx : -this.dx
         }
         else if (this.game.level > 10) {
-            this.x = 112 + Math.sin((this.y + this.spawnX) / 64) * 96
+            this.setX(112 + Math.sin((this.y + this.spawnX) / 64) * 96)
             this.dy = 120
         }
         else if (this.game.level > 5) {
@@ -87,26 +113,12 @@ class Head {
             }
         }
         else {
-            this.x = this.spawnX + Math.sin(this.y / 32) * 48
+            this.setX(this.spawnX + Math.sin(this.y / 32) * 48)
             this.dy = 120
         }
 
-        this.x += this.dx * deltaTime
-        this.y += this.dy * deltaTime
-
-        if (this.x < -32) {
-            this.x += 288
-        }
-        if (this.x > 256) {
-            this.x -= 288
-        }
-
-        if (this.y > 192) {
-            this.y -= 224
-        }
-        if (this.y < -32) {
-            this.y += 224
-        }
+        this.setX(this.x + this.dx * deltaTime)
+        this.setY(this.y + this.dy * deltaTime)
     }
 
     draw() {
@@ -125,16 +137,19 @@ class Game {
 
         this.time = 10
 
-        this.level = 10
+        this.level = 35
         this.nextLevel()
     }
 
     updateCorrectHead() {
-        this.heads.forEach((head, idx) => {
+        for (let i = 0; i < this.heads.length; i += 1) {
+            const head = this.heads[i]
+
             if (head.char == this.wantedChar) {
-                this.correctHead = idx
+                this.correctHead = i
+                return
             }
-        })
+        }
     }
 
     randRange(min, max) {
@@ -150,7 +165,7 @@ class Game {
         if (this.level > 35) {
             for (let i = 0; i < this.level; i += 1) {
                 const angle = (i * (360 / this.level)) * Math.PI / 180
-                headPos.push([angle, 80])
+                headPos.push([angle, this.randRange(0, 192 - 32)])
             }
         }
         else if (this.level > 25) {
@@ -213,7 +228,7 @@ class Game {
             this.heads.push(new Head(this, pos[0], pos[1], possibleChars[this.randRange(0, possibleChars.length - 1)]))
         })
 
-        this.heads[this.randRange(Math.max(this.heads.length - 10, 0), this.heads.length - 1)].char = this.wantedChar
+        this.heads[this.heads.length - 1].char = this.wantedChar
     }
 
     nextLevel() {
@@ -230,6 +245,11 @@ class Game {
         this.timerIncreaseCldwn = 0.125
 
         this.winTimer = 0
+        this.loseTimer = 0
+    }
+
+    hasControl() {
+        return this.winTimer <= 0 && this.loseTimer <= 0
     }
 
     update(deltaTime) {
@@ -251,8 +271,24 @@ class Game {
                 this.nextLevel()
             }
         }
-        else {
+        if (this.loseTimer > 0) {
+            this.loseTimer -= deltaTime
+
+            if (this.loseTimer <= 0) {
+                this.time = 10
+
+                this.level = -1
+                this.nextLevel()
+            }
+        }
+
+        if (this.hasControl()) {
             this.time -= deltaTime
+            if (this.time <= 0) {
+                this.time = 0
+                this.loseTimer = 3
+            }
+
             this.levelTimer += deltaTime
 
             this.heads.forEach((head) => {
@@ -280,7 +316,7 @@ class Game {
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
 
         this.heads.forEach((head, idx) => {
-            if (this.winTimer <= 0 || this.correctHead == idx) {
+            if (this.hasControl() || this.correctHead == idx) {
                 head.draw()
             }
         })
@@ -295,6 +331,8 @@ class Game {
     }
 
     onClick(x, y) {
+        if (this.winTimer > 0) { return }
+
         if (y < 192) { return }
         y -= 192
 
