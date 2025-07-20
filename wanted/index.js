@@ -137,7 +137,7 @@ class Game {
 
         this.time = 10
 
-        this.level = 35
+        this.level = -1
         this.nextLevel()
     }
 
